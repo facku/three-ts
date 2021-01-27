@@ -46,7 +46,7 @@ class App {
 
   createBox = () => {
     const loader = new TextureLoader();
-    const wall = loader.load("wall.jpg");
+    const wall = loader.load("textures/wall.jpg");
     const geometry = new BoxGeometry(1, 1, 1, 3, 3, 3);
     const material = new MeshStandardMaterial({
       map: wall,
