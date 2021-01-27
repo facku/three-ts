@@ -40,4 +40,4 @@ npm run build
 
 <br>
 
-<a href="https://github.com/facku/three-ts/blob/main/src/main.ts" target="_blank">https://github.com/facku/three-ts/blob/main/src/main.ts</a>
+<a href="https://github.com/facku/three-ts/blob/main/src/main.ts">https://github.com/facku/three-ts/blob/main/src/main.ts</a>

@@ -9,6 +9,7 @@ import {
   WebGLRenderer,
   FogExp2,
   PCFSoftShadowMap,
+  TextureLoader,
 } from "three";
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -25,7 +26,7 @@ class App {
     document.body.style.margin = "0";
     document.body.style.overflow = "hidden";
 
-    this.camera.position.set(0, 1.5, 3);
+    this.camera.position.set(0, 0.75, 1.5);
     this.camera.lookAt(0, 0, 0);
 
     this.scene.fog = new FogExp2(bgColor, 0.2);
@@ -44,8 +45,15 @@ class App {
   }
 
   createBox = () => {
+    const loader = new TextureLoader();
+    const wall = loader.load("wall.jpg");
     const geometry = new BoxGeometry(1, 1, 1, 3, 3, 3);
-    const material = new MeshStandardMaterial({ color: 0x00ff00 });
+    const material = new MeshStandardMaterial({
+      map: wall,
+      normalMap: wall,
+      roughness: 0.9,
+      roughnessMap: wall,
+    });
     const cube = new Mesh(geometry, material);
     cube.castShadow = true;
     cube.receiveShadow = true;
