@@ -65,7 +65,7 @@ class App {
 
   addLight = () => {
     const light = new PointLight(0xffffff, 1, 100);
-    light.position.set(0, 10, 0);
+    light.position.set(0, 10, 5);
     light.castShadow = true;
     light.shadow.mapSize.width = 512; // default
     light.shadow.mapSize.height = 512; // default
@@ -77,6 +77,7 @@ class App {
   init = () => this.animate();
 
   animate = () => {
+    this.cube.rotateY(Math.PI / 180);
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(this.animate);
   };
